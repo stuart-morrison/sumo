@@ -2,16 +2,16 @@
 % Please edit documentation in R/numbers.R
 \name{base_26_calc}
 \alias{base_26_calc}
-\title{Convert an integer to base 26}
+\title{Convert an base 26 string to an integer}
 \usage{
 base_26_calc(x)
 }
 \arguments{
-\item{x}{The integer to convert to base 26.}
+\item{x}{The base 26 string to convert to base 10}
 }
 \value{
-A string of \code{x} in base 26.
+An integer  of \code{x} in base 10.
 }
 \description{
-Convert an integer to base 26
+Convert an base 26 string to an integer
 }

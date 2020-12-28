@@ -11,10 +11,10 @@ factors <- function(x, include_original = FALSE) {
     }
 }
 
-#' Convert an integer to base 26
+#' Convert an base 26 string to an integer
 #' @export
-#' @param x The integer to convert to base 26.
-#' @return A string of \code{x} in base 26.
+#' @param x The base 26 string to convert to base 10
+#' @return An integer  of \code{x} in base 10.
 base_26_calc <- function(x) {
 
     x <- tolower(x)
