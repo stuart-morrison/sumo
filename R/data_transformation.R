@@ -49,7 +49,7 @@ excel_datetime <- function(date) {
     return(x)
 }
 
-#' I'm sick of typing length(unique(x))
+#' Number of unique elements in the vector
 #' @export
 #' @param x The vector to find the number of unique elements over.
 #' @return An integer of the number of unique elements in \code{x}.

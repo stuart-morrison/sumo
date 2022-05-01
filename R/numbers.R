@@ -55,3 +55,24 @@ dice_roller <- function(sides = 6, times = 1, dice = 1) {
         return(unlist(lapply(1:times, FUN = function(x) which(rmultinom(1, 1, rep((1 / sides), sides)) == 1))))
     }
 }
+
+#' Area of a given polygon
+#' @export
+#' @param x Ordered vector of x coordinates
+#' @param y Ordered vector of y coordinates
+polygon_area <- function(x, y) {
+    # Extract vector lengths
+    len_x <- length(x)
+    len_y <- length(y)
+
+    if ((len_x != len_y) | (len_x == 0)) {
+        stop("Coordinate lengths don't match or are zero")
+    }
+
+    # Calculate the area
+    area <- sum((x[(1:len_x %% len_x) + 1] + x) * (y[(1:len_y %% len_y) + 1] - y)) / 2
+
+    # Return
+    return(area)
+
+}
