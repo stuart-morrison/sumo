@@ -5,3 +5,10 @@ Collection of useful functions in:
 - Numerical analysis
 - Regex
 - String manipulation
+
+## Installation
+
+Install the development version of `sumo` by running:
+``` r
+devtools::install_github("stuart-morrison/sumo")
+```
