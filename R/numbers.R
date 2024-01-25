@@ -1,15 +1,3 @@
-#' Factors of a number
-#' @export
-#' @param x The integer to find the factors of.
-#' @param include_original Should \code{x} by contained in the output?
-#' @return A vector of integers of the factors of \code{x}.
-factors <- function(x, include_original = FALSE) {
-    if (include_original) {
-        return(c((1:(x / 2))[(x %% 1:(x / 2)) == 0], x))
-    } else {
-        return((1:(x / 2))[(x %% 1:(x / 2)) == 0])
-    }
-}
 
 #' Convert an base 26 string to an integer
 #' @export
@@ -26,20 +14,6 @@ base_26_calc <- function(x) {
     return(this_column_is)
 }
 
-#' Iteratively calculate the digital sum of a number
-#' @export
-#' @param x The integer to calculate the digital sum of
-#' @return An integer of the digitical sum of \code{x}.
-digital_sum <- function(x) {
-    temp <- x
-
-    while (temp >= 10) {
-        digits <- ceiling(log10(temp + 1))
-        temp <- sum((temp %% (10 ^ (1:digits))) %/% (10 ^ (0:(digits - 1))))
-    }
-
-    return(temp)
-}
 
 #' Dice roll simulator
 #' @export
@@ -56,23 +30,3 @@ dice_roller <- function(sides = 6, times = 1, dice = 1) {
     }
 }
 
-#' Area of a given polygon
-#' @export
-#' @param x Ordered vector of x coordinates
-#' @param y Ordered vector of y coordinates
-polygon_area <- function(x, y) {
-    # Extract vector lengths
-    len_x <- length(x)
-    len_y <- length(y)
-
-    if ((len_x != len_y) | (len_x == 0)) {
-        stop("Coordinate lengths don't match or are zero")
-    }
-
-    # Calculate the area
-    area <- sum((x[(1:len_x %% len_x) + 1] + x) * (y[(1:len_y %% len_y) + 1] - y)) / 2
-
-    # Return
-    return(area)
-
-}

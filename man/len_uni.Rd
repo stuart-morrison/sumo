@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_transformation.R
 \name{len_uni}
 \alias{len_uni}
-\title{I'm sick of typing length(unique(x))}
+\title{Number of unique elements in the vector}
 \usage{
 len_uni(x)
 }
@@ -13,5 +13,5 @@ len_uni(x)
 An integer of the number of unique elements in \code{x}.
 }
 \description{
-I'm sick of typing length(unique(x))
+Number of unique elements in the vector
 }
