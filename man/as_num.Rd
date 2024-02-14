@@ -4,10 +4,10 @@
 \alias{as_num}
 \title{Large number syntax divider}
 \usage{
-as_num(...)
+as_num(x)
 }
 \arguments{
-\item{...}{A set of strings of numerics with punctuation marks}
+\item{x}{A vector of strings of numerics with punctuation marks}
 }
 \value{
 A numeric vector.
@@ -16,5 +16,5 @@ A numeric vector.
 Large number syntax divider
 }
 \examples{
-as_num("123_456.78", "1-000-000")
+as_num(c("123_456.78", "1-000-000"))
 }
