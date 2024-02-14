@@ -97,13 +97,12 @@ which_na <- function(x) {
 
 #' Large number syntax divider
 #' @export
-#' @param ... A set of strings of numerics with punctuation marks
+#' @param x A vector of strings of numerics with punctuation marks
 #' @return A numeric vector.
 #' @examples
-#' as_num("123_456.78", "1-000-000")
-as_num <- function(...) {
-    collector <- list(...)
-    return(as.numeric(gsub(x = collector, pattern = "(?!\\.)[[:punct:]]",
+#' as_num(c("123_456.78", "1-000-000"))
+as_num <- function(x) {
+    return(as.numeric(gsub(x = x, pattern = "(?!\\.)[[:punct:]]",
                            replacement = "", perl = TRUE)))
 }
 
