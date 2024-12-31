@@ -23,5 +23,13 @@ digital_sum <- function(n) .Call(wrap__digital_sum, n)
 #' @export
 polygon_area <- function(x, y) .Call(wrap__polygon_area, x, y)
 
+#' Replace all text after a given character
+#' @export
+replace_after <- function(string, symbol, replacement) .Call(wrap__replace_after, string, symbol, replacement)
+
+#' Replace all text before a given character
+#' @export
+replace_before <- function(string, symbol, replacement) .Call(wrap__replace_before, string, symbol, replacement)
+
 
 # nolint end

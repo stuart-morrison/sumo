@@ -49,6 +49,44 @@ fn polygon_area(x: &[f64], y: &[f64]) -> f64 {
     return area
 }
 
+/// Replace all text before a given character
+/// @export
+#[extendr]
+fn replace_before(string: Vec<String>, symbol: &str, replacement: &str) -> extendr_api::Result<Vec<String>> {
+    let results: Vec<String> = string
+        .into_iter()    
+        .map(|s| {
+            if let Some(pos) = s.rfind(symbol) {
+                format!("{}{}", replacement, &s[pos + symbol.len()..])
+            } else {
+                s
+            }
+        })
+        .collect();
+
+    Ok(results)
+}
+
+/// Replace all text after a given character
+/// @export
+#[extendr]
+fn replace_after(string: Vec<String>, symbol: &str, replacement: &str) -> extendr_api::Result<Vec<String>> {
+    let results: Vec<String> = string
+        .into_iter()    
+        .map(|s| {
+            if let Some(pos) = s.find(symbol) {
+                format!("{}{}", &s[..pos], replacement)
+            } else {
+                s
+            }
+        })
+        .collect();
+
+    Ok(results)
+
+}
+
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.
@@ -57,4 +95,7 @@ extendr_module! {
     fn factors;
     fn digital_sum;
     fn polygon_area;
+    fn replace_after;
+    fn replace_before;
 }
+

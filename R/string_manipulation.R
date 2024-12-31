@@ -24,7 +24,7 @@
 #' @param perl Logical. Should Perl-compatible regexps be used?
 #' @param fixed Logical. If TRUE, pattern is a string to be matched as is. Overrides all conflicting arguments.
 #' @param useBytes Logical. If TRUE the matching is done byte-by-byte rather than character-by-character. See ‘Details’.
-replace_before <- function(string, symbol, replacement,
+replace_before_old <- function(string, symbol, replacement,
                            ignore.case = FALSE, perl = FALSE,
                            fixed = FALSE, useBytes = FALSE) {
     # Create the regex pattern
@@ -45,7 +45,7 @@ replace_before <- function(string, symbol, replacement,
 #' @param perl Logical. Should Perl-compatible regexps be used?
 #' @param fixed Logical. If TRUE, pattern is a string to be matched as is. Overrides all conflicting arguments.
 #' @param useBytes Logical. If TRUE the matching is done byte-by-byte rather than character-by-character. See ‘Details’.
-replace_after <- function(string, symbol, replacement,
+replace_after_old <- function(string, symbol, replacement,
                           ignore.case = FALSE, perl = FALSE,
                           fixed = FALSE, useBytes = FALSE) {
     # Create the regex pattern
